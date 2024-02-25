@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_1"
+    tools:context=".aspirantes.Activity_Aspirantes">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="#FFFFFF"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Bienvenidos Aspirantes"
+                    android:textColor="@color/verde_2"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Proceso de admision"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_datos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_requisitos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Requisitos para ser aceptado"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:orientation="horizontal">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPager"
+                            android:layout_width="0dp"
+                            android:layout_height="500dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/coacalco_imagen1" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/cafeteria" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/canchas" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/edificioab" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/edificioc" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/edificiod" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/edificiofe" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/explanada" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/futboll" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop"
+                            app:srcCompat="@drawable/gym" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/txt_informacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Informacion Plantel"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="recorridoGeorreferenciado"
+                    android:text="Recorrido Georreferenciado " />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_1"
+    tools:context=".adminCE.FragmentCE_Config">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/configuracion_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Configuración Control Escolar"
+                android:textAlignment="center"
+                android:textColor="@color/verde_2"
+                android:textStyle="bold"
+                android:textSize="30sp"/>
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="General"
+                android:textColor="@color/verde_2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/perfilBoton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Mi perfil"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_person_24"
+                app:iconTint="@color/verde_1"  />
+
+            <Button
+                android:id="@+id/eventosBoton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Recordatorios"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_event_24"
+                app:iconTint="@color/verde_1" />
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Terminos y condiciones"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_find_in_page_24"
+                app:iconTint="@color/verde_1"  />
+
+            <Button
+                android:id="@+id/nosotrosBoton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Acerca de nosotros"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_info_24"
+                app:iconTint="@color/verde_1"  />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Permisos"
+                android:textColor="@color/verde_2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Notificaciones"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_notifications_24"
+                app:iconTint="@color/verde_1" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Seguridad"
+                android:textColor="@color/verde_2"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/boton_cerrarSesionCE"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="Cerrar sesion"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                app:icon="@drawable/baseline_exit_to_app_24"
+                app:iconTint="@color/verde_1" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

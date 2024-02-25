@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_1"
+    tools:context=".aspirantes.Activity_RecorridoGeorreferenciado">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/placeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:gravity="center|center_horizontal"
+                android:hint="Colegio de Estudios Cientificos y Tecnologicos del Estado de México Plantel Coacalco"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textColorHint="#000000"
+                android:textSize="26sp" />
+
+            <ImageView
+                android:id="@+id/placeImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/placeTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_launcher_foreground"
+                tools:srcCompat="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/placeDescription"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/placeImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:hint="Bienvenido, conoce tus instalaciones"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textColorHint="#000000" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Inicio"
+        android:icon="@drawable/baseline_home_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Inicio"/>
+    <item
+        android:id="@+id/CE"
+        android:icon="@drawable/baseline_library_books_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Control Escolar"/>
+    <item
+        android:id="@+id/Vinculacion"
+        android:icon="@drawable/baseline_adjust_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Vinculacion"/>
+    <item
+        android:id="@+id/Config"
+        android:icon="@drawable/baseline_settings_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Configuracion"/>
+</menu>

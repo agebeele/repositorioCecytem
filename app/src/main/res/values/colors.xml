@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="verde_1">#00FF00</color>
+    <color name="verde_2">#00BB00</color>
+    <color name="verde_3">#008800</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorRojo">#FF0000</color>
+
+    <color name="colorChatBotMessage">#4CAF50</color>
+    <color name="colorUserMessage">#DCAB00</color>
+</resources>

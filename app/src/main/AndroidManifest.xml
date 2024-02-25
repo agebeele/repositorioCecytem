@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission-sdk-23 android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/cecytem"
+        android:label="Mi CECyTEM"
+        android:roundIcon="@drawable/cecytem"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DUAL"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioTurno.cambioTurno_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioPlantel.cambioPlantel_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioCarrera.cambioCarrera_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCambioGrupo.cambioGrupo_Recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudEventos.eventos_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudEventos.eventos_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudEventos.eventos_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudServicioSocial.servicio_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.becas_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.beca_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudBecas.becas_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudHistorial.historial_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudHistorial.historial_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudHistorial.historial_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudConstancia.constancia_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".adminVIN.adminVIN_perfil"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCredencial.credencial_item"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCredencial.credencial_adapter"
+            android:exported="false" />
+        <activity
+            android:name=".solicitudCredencial.credencial_recycler"
+            android:exported="false" />
+        <activity
+            android:name=".adminCE.adminCE_Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".chatBotVIN.ChatBot_VinPrincipal"
+            android:exported="false" />
+        <activity
+            android:name=".adminVIN.agregarItem_VIN"
+            android:exported="false" />
+        <activity
+            android:name=".adminVIN.AdapterVIN"
+            android:exported="false" />
+        <activity
+            android:name=".adminCE.agregarItem_CE"
+            android:exported="false" />
+        <activity
+            android:name=".adminCE.AdapterCE"
+            android:exported="false" />
+        <activity
+            android:name=".chatBotCE.chatBot_inicio"
+            android:exported="false" />
+        <activity
+            android:name=".adminVIN.AdminVIN_Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".adminCE.AdminCE_Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".adminVIN.AdminVin_Login"
+            android:exported="false" />
+        <activity
+            android:name=".adminCE.AdminCE_Login"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Eventos"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Nostros"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.item_publicacion"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.PublicacionAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".aspirantes.Activity_RecorridoGeorreferenciado"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_social"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_eventos"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_becas"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_plantel"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_grupo"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_carrera"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_turno"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_historial"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_constancia"
+            android:exported="false" />
+        <activity
+            android:name=".formularios.formulario_credencial"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Egresado"
+            android:exported="false" />
+        <activity
+            android:name=".aspirantes.Activity_Aspirantes"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Registro"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.Activity_Login"
+            android:exported="false" />
+        <activity
+            android:name=".alumnos.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

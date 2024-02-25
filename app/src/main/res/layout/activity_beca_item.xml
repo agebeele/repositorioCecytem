@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/verde_1"
+    tools:context="solicitudBecas.beca_item">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="603dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView13"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="0"
+                        android:src="@drawable/cecytem" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView42"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Colegio de Estudios Cientificos y Tecologicos del Estado de México"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/item_tipoTramite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:text="Tramite: Beca"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView65"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Datos de la solicitud"
+                        android:textAlignment="center"
+                        android:textColor="@color/verde_1"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de la solicitud:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_fecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha: 00/00/00"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textHora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hora:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_hora"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hora: 00:00:00"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textCurp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CURP:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_curp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CURP"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textPaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido paterno:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_apellidoPaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido Paterno: Lopez"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textMaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido materno:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_apellidoMaterno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Apellido Materno: Garcia"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_nombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre: Brandon Adrian"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textFechaN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha de Nacimiento:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_naciemiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha: 00/00/00"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textSexo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Observaciones:"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_sexo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hombre o Mujer"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textEstado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Estado de Nacimiento"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_EstadoN"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Estado de Naciminto"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textSituacion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Situacion Academica"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_Academica"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Situacion Academica"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textSemestre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Semestre"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_semestre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hombre o Mujer"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textCorreP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Correo Personal"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_correop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Correo Personal"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textCorreoIns"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Correo Institucional"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_correoins"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ejemplo1@cecytem.edu.mx"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textTelefonoCasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Telefono de Casa"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_telefonocasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5555555555"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textTelefonoAlumno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Telefono del Alumno"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_telefonoalumno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="555555555"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textTelefonoPadre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Telefono del Padre"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_telefonopadre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5555555"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textDomicilio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Domicilio"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_domicilio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Av Lopez Mateos"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textNoEx"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Exterior"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_noex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mz 15 Lt43"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textNoInterior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No Interior"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_nointerior"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textColonia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre de la Colonia"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_colonia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Villa de las Flores"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textMunicipio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Municipio"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_municipio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Coacalco"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+
+                    <TextView
+                        android:id="@+id/textEstadoD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Estado del Domicilio"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_estadod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mexico"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textCodigoP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Codigo Postal"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_codigop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="55720"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textEscuelaP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Escuela de Procedencia"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_escuelap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jaime Nuno"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textPromedio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Promedio de la Secundaria"
+                        android:textColor="@color/black"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/item_promedio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="9.0"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
