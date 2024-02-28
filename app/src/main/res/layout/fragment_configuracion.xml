@@ -85,18 +85,6 @@
                 app:iconTint="@color/verde_1" />
 
             <Button
-                android:id="@+id/button17"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Terminos y condiciones"
-                android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                app:icon="@drawable/baseline_find_in_page_24"
-                app:iconTint="@color/verde_1" />
-
-            <Button
                 android:id="@+id/nosotrosBoton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -128,17 +116,6 @@
                 app:icon="@drawable/baseline_location_on_24"
                 app:iconTint="@color/verde_1" />
 
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Notificaciones"
-                android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                app:icon="@drawable/baseline_notifications_24"
-                app:iconTint="@color/verde_1" />
-
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
@@ -147,18 +124,6 @@
                 android:text="Seguridad"
                 android:textColor="@color/verde_2"
                 android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:backgroundTint="#FFFFFF"
-                android:text="Verificacion"
-                android:textAlignment="viewStart"
-                android:textColor="@color/black"
-                app:icon="@drawable/baseline_verified_user_24"
-                app:iconTint="@color/verde_1" />
 
             <Button
                 android:id="@+id/boton_cerrarSesion"

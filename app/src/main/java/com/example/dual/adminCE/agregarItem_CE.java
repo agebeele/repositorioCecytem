@@ -81,12 +81,11 @@ public class agregarItem_CE extends AppCompatActivity {
                 titulo.setText(json_data.getString("titulo"));
                 descripcion.setText(json_data.getString("descripcion"));
 
-                Toast.makeText(agregarItem_CE.this, "Publicacion creada.", Toast.LENGTH_SHORT).show();
-
             } catch (JSONException e) {
                 titulo.setText("");
                 descripcion.setText("");
-                Toast.makeText(getApplicationContext(), progress[0], Toast.LENGTH_LONG).show();
+
+                Toast.makeText(agregarItem_CE.this, "Publicacion creada.", Toast.LENGTH_SHORT).show();
             }
         }
     }

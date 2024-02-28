@@ -17,9 +17,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Activity_Perfil extends AppCompatActivity {
-    TextView nombreGeneral, matriculaGeneral;
+    TextView nombreGeneral, matriculaGeneral, carrera;
     TextView nombre, apellido_paterno, apellido_materno;
-    TextView municipio, colonia, calle, numeroExterior, numeroInterior, codigoPostal, telefonoCasa;
     WebService obj = new WebService();
 
     @Override
@@ -32,14 +31,7 @@ public class Activity_Perfil extends AppCompatActivity {
         nombre = findViewById(R.id.infoNombre_user);
         apellido_paterno = findViewById(R.id.infoPaterno_user);
         apellido_materno = findViewById(R.id.infoMaterno_user);
-
-        municipio = findViewById(R.id.txt_municipio);
-        colonia = findViewById(R.id.txt_colonia);
-        calle = findViewById(R.id.txt_calle);
-        numeroExterior = findViewById(R.id.txt_exterior);
-        numeroInterior = findViewById(R.id.txt_interior);
-        codigoPostal = findViewById(R.id.txt_codigoPostal);
-        telefonoCasa = findViewById(R.id.txt_telefonoCasa);
+        carrera = findViewById(R.id.carreraUsuario);
 
         // Recuperar la matrícula guardada en SharedPreferences
         SharedPreferences preferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
@@ -49,10 +41,6 @@ public class Activity_Perfil extends AppCompatActivity {
             MiAsyncTask datosUserTask = new MiAsyncTask();
             datosUserTask.setTaskType("datosUser");
             datosUserTask.execute(matricula);
-
-            MiAsyncTask datosDomicilioTask = new MiAsyncTask();
-            datosDomicilioTask.setTaskType("datosDomicilio");
-            datosDomicilioTask.execute(matricula);
 
         }
     }
@@ -71,9 +59,6 @@ public class Activity_Perfil extends AppCompatActivity {
             switch (taskType) {
                 case "datosUser":
                     msj = obj.datosUsuario(parameter[0]);
-                    break;
-                case "datosDomicilio":
-                    msj = obj.datosDomicilio(parameter[0]);
                     break;
                 default:
             }
@@ -100,17 +85,8 @@ public class Activity_Perfil extends AppCompatActivity {
                             nombre.setText(usuarioData.getString("nombre"));
                             apellido_paterno.setText(usuarioData.getString("apellido_paterno"));
                             apellido_materno.setText(usuarioData.getString("apellido_materno"));
+                            carrera.setText(usuarioData.getString("carreraActual"));
 
-                        } else if ("datosDomicilio".equals(taskType)) {
-                            // Maneja los datos del domicilio
-                            JSONObject domicilioData = usuario.getJSONObject(0); // Obtén el primer objeto del JSONArray
-                            municipio.setText(domicilioData.getString("municipio"));
-                            colonia.setText(domicilioData.getString("colonia"));
-                            calle.setText(domicilioData.getString("calle"));
-                            numeroExterior.setText(domicilioData.getString("numeroExterior"));
-                            numeroInterior.setText(domicilioData.getString("numeroInterior"));
-                            codigoPostal.setText(domicilioData.getString("codigoPostal"));
-                            telefonoCasa.setText(domicilioData.getString("telefonoCasa"));
                         }
                     } else {
                         // Maneja el caso de error o usuario no encontrado
@@ -121,15 +97,7 @@ public class Activity_Perfil extends AppCompatActivity {
                         nombre.setText("");
                         apellido_paterno.setText("");
                         apellido_materno.setText("");
-
-                        municipio.setText("");
-                        colonia.setText("");
-                        calle.setText("");
-                        numeroExterior.setText("");
-                        numeroInterior.setText("");
-                        codigoPostal.setText("");
-                        telefonoCasa.setText("");
-
+                        carrera.setText("");
                         // Mostrar mensaje de error en tu activity
                         Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_LONG).show();
                     }

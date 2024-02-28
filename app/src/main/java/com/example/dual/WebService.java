@@ -51,7 +51,7 @@ public class WebService {
         }
         return aux;
     }
-    public String registarUsuario (String matricula, String curp, String nombre, String paterno, String materno) {
+    public String registarUsuario (String matricula, String curp, String nombre, String paterno, String materno, String carreraActual) {
         String response = "";
         try {
             URL url = new URL("http://192.168.137.143:80/conexion_cecytem/registro_usuarios.php");
@@ -64,7 +64,8 @@ public class WebService {
                     + "&curp=" + URLEncoder.encode(curp, "UTF-8")
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")
                     + "&apellido_paterno=" + URLEncoder.encode(paterno, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&carreraActual=" + URLEncoder.encode(carreraActual, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -1057,7 +1058,7 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarBeca(String curp, String grupo, String nombre, String paterno,String materno, String fecha, String hora, String fechaNacimiento, String sexo, String estadoNacimiento, String situacionAcademica, String semestre, String correoPersonal, String correoInstitucional,String telefonoCasa, String telefonoAlumno, String telefonoPadre, String domicilio, String noExterior, String noInterior, String nombreColonia, String municipio, String estadoDomicilio, String codigoPostal, String escuelaProcedencia, String promedio) {
+    public String solicitarBeca(String curp, String nombre, String paterno,String materno, String fecha, String hora, String fechaNacimiento, String sexo, String estadoNacimiento, String situacionAcademica, String semestre, String correoPersonal, String correoInstitucional,String telefonoCasa, String telefonoAlumno, String telefonoPadre, String domicilio, String noExterior, String noInterior, String nombreColonia, String municipio, String estadoDomicilio, String codigoPostal, String escuelaProcedencia, String promedio) {
         String response = "";
         try {
             URL url = new URL("http://192.168.137.143:80/conexion_cecytem/solicitar_beca.php");
@@ -1067,7 +1068,6 @@ public class WebService {
 
             // Construye los datos a enviar en el cuerpo de la solicitud
             String data = "curp=" + URLEncoder.encode(curp, "UTF-8")
-                    + "&grupo=" + URLEncoder.encode(grupo, "UTF-8")
                     + "&fecha=" + URLEncoder.encode(fecha, "UTF-8")
                     + "&hora=" + URLEncoder.encode(hora, "UTF-8")
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")

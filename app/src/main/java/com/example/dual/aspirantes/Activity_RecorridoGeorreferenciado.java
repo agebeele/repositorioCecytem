@@ -32,34 +32,34 @@ public class Activity_RecorridoGeorreferenciado extends AppCompatActivity implem
     private LocationMonitor locationMonitor;
     private static final String[] placeNames = {"Edificio A", "Edificio B","Edificio C","Edificio D","Edificio E","Edifico F","Cafeteria","Explanada","Cancha Voli","Cancha Basquet","Cancha Futbol","Maquinas Ejercicio","Entrada Principal"};
     private static final double[][] buildingVerticesLat = {
-            {19.621442506334194, 19.621455138623904, 19.621361659656547, 19.62143745341804}, // Edificio A, latitudes de las esquinas
-            {19.62134650089995, 19.62128081293821, 19.621197439717335, 19.621258074791356},  // Edificio B, latitudes de las esquinas
-            {19.621290918780225, 19.621194913255426, 19.621290918780225, 19.621389450706566}, // Edificio C, latitudes de las esquinas
-            {19.62109750966048, 19.621002915642297, 19.62123238143732, 19.621135495919397}, // Edificio D, latitudes de las esquinas
-            {19.621666687962552, 19.621571492869688, 19.621675612499626, 19.621773782374635}, // Edificio E, latitudes de las esquinas
-            {19.621845178609703, 19.62174998362256, 19.621849640873343, 19.621953760323073}, // Edificio F, latitudes de las esquinas
-            {19.62165032630997, 19.621769320108882, 19.62172023517751, 19.62160421618922},// Cafeteria, latitudes de las esquinas
-            {19.62144059952187, 19.621605703609607, 19.621491171963143, 19.621336479736755},// Explanada, latitudes de las esquinas
-            {19.62118327478407, 19.621050893694537, 19.62093041193402, 19.621059818265795},// Cancha Voli, latitudes de las esquinas
-            {19.620985446820775, 19.620909587914152, 19.620659699497953, 19.620748945405484},// Cancha Basquet, latitudes de las esquinas
-            {19.620583840432214, 19.620421710163562, 19.62047228292545, 19.620322052027348},// Cancha Futbol, latitudes de las esquinas
-            {19.621035742456634, 19.62099409444694, 19.620876587504252, 19.620916748114585},// Maquinas Ejercicio, latitudes de las esquinas
-            {19.621595014695966, 19.621562291374552, 19.62149684471176, 19.621516181228543}// Entrada Principal, latitudes de las esquinas
+            {19.621549, 19.621466, 19.621438, 19.621357}, // Edificio A, latitudes de las esquinas
+            {19.621355, 19.621294, 19.621246, 19.621188},  // Edificio B, latitudes de las esquinas
+            {19.621404, 19.621301, 19.621295, 19.621195}, // Edificio C, latitudes de las esquinas
+            {19.621244, 19.621111, 19.621136, 19.621002}, // Edificio D, latitudes de las esquinas
+            {19.621970, 19.621866, 19.621859, 19.621756}, // Edificio E, latitudes de las esquinas
+            {19.621790, 19.621684, 19.621677, 19.621573}, // Edificio F, latitudes de las esquinas
+            {19.621748, 19.621705, 19.621636, 19.621592},// Cafeteria, latitudes de las esquinas
+            {19.621642, 19.621448, 19.621343, 19.621525},// Explanada, latitudes de las esquinas
+            {19.621189, 19.621152, 19.621011, 19.620973},// Cancha Voli, latitudes de las esquinas
+            {19.621144, 19.621070, 19.621043, 19.620970},// Cancha Basquet, latitudes de las esquinas
+            {19.620563, 19.620459, 19.620431, 19.620326},// Cancha Futbol, latitudes de las esquinas
+            {19.620909, 19.620900, 19.621021, 19.621011},// Maquinas Ejercicio, latitudes de las esquinas
+            {19.621660, 19.621546, 19.621508, 19.621659}// Entrada Principal, latitudes de las esquinas
     };
     private static final double[][] buildingVerticesLng = {
-            {-99.10051515875033, -99.1002388912194, -99.1002737599369, -99.10050711212321}, // Edificio A, longitudes de las esquinas
-            {-99.10051515875033, -99.10033813295381, -99.10036495504418, -99.1005553918859},  // Edificio B, longitudes de las esquinas
-            {-99.10071364221915, -99.10075655756374, -99.10105696497604, -99.10102746067659},  // Edificio C, longitudes de las esquinas
-            {-99.10077672642707, -99.10080786384027, -99.10114350621622, -99.10118501038097}, // Edificio D, longitudes de las esquinas
-            {-99.10064410379672, -99.10067726535205, -99.10098519408007, -99.10094413691633}, // Edificio E, longitudes de las esquinas
-            {-99.10057620156438, -99.10060936311972, -99.10090939623933, -99.10087939292737}, // Edificio F, longitudes de las esquinas
-            {-99.10051777406214, -99.10046566304665, -99.10030459263506, -99.10034091243375},// Cafeteria, latitudes de las esquinas
-            {-99.10101835563432, -99.10096150725374, -99.10065357852572, -99.10069463568941},// Explanada, latitudes de las esquinas
-            {-99.10049566636324, -99.10010720242941, -99.10015141783653, -99.10055093562211},// Cancha Voli, latitudes de las esquinas
-            {-99.10045145095539, -99.1001561552008, -99.10025090250176, -99.1005383026479},// Cancha Basquet, latitudes de las esquinas
-            {-99.10061883785262, -99.10069147745, -99.10032038385468, -99.10038986520871},// Cancha Futbol, latitudes de las esquinas
-            {-99.1007366655636, -99.10063560177596, -99.10068613366977, -99.100809305161},// Maquinas Ejercicio, latitudes de las esquinas
-            {-99.10124672186454, -99.1011535536853, -99.10118355699726, -99.10127356693313}// Entrada Principal, latitudes de las esquinas
+            {-99.100473, -99.100221, -99.100512, -99.100261}, // Edificio A, longitudes de las esquinas
+            {-99.100515, -99.100325, -99.100553, -99.100362},  // Edificio B, longitudes de las esquinas
+            {-99.101010, -99.100701, -99.101051, -99.100741},  // Edificio C, longitudes de las esquinas
+            {-99.101134, -99.100737, -99.101175, -99.100778}, // Edificio D, longitudes de las esquinas
+            {-99.100858, -99.100549, -99.100898, -99.100591}, // Edificio E, longitudes de las esquinas
+            {-99.100925, -99.100618, -99.100966, -99.100659}, // Edificio F, longitudes de las esquinas
+            {-99.100434, -99.100303, -99.100476, -99.100346},// Cafeteria, latitudes de las esquinas
+            {-99.100981, -99.101046, -99.100733, -99.100617},// Explanada, latitudes de las esquinas
+            {-99.100507, -99.100398, -99.100573, -99.100465},// Cancha Voli, latitudes de las esquinas
+            {-99.100340, -99.100140, -99.100381, -99.100181},// Cancha Basquet, latitudes de las esquinas
+            {-99.100614, -99.100339, -99.100671, -99.100395},// Cancha Futbol, latitudes de las esquinas
+            {-99.100702, -99.100680, -99.100653, -99.100631},// Maquinas Ejercicio, latitudes de las esquinas
+            {-99.101246, -99.101289, -99.101092, -99.101016}// Entrada Principal, latitudes de las esquinas
     };
     private TextView placeTitle, placeDescription;
     private ImageView placeImage;
@@ -290,16 +290,32 @@ public class Activity_RecorridoGeorreferenciado extends AppCompatActivity implem
     }
 
     private boolean isInsideBuilding(double userLat, double userLng, double[] buildingVerticesLatitudes, double[] buildingVerticesLongitudes) {
-        int verticesCount = buildingVerticesLatitudes.length;
-        boolean inside = false;
+        double minLat = Double.MAX_VALUE;
+        double maxLat = Double.MIN_VALUE;
+        double minLng = Double.MAX_VALUE;
+        double maxLng = Double.MIN_VALUE;
 
-        for (int i = 0, j = verticesCount - 1; i < verticesCount; j = i++) {
-            if ((buildingVerticesLongitudes[i] > userLng) != (buildingVerticesLongitudes[j] > userLng) &&
-                    (userLat < (buildingVerticesLatitudes[j] - buildingVerticesLatitudes[i]) * (userLng - buildingVerticesLongitudes[i]) / (buildingVerticesLongitudes[j] - buildingVerticesLongitudes[i]) + buildingVerticesLatitudes[i])) {
-                inside = !inside;
-            }
+        // Calcular el centroide del rectángulo del edificio
+        double centroidLat = 0.0;
+        double centroidLng = 0.0;
+        for (int i = 0; i < buildingVerticesLatitudes.length; i++) {
+            if (buildingVerticesLatitudes[i] < minLat) minLat = buildingVerticesLatitudes[i];
+            if (buildingVerticesLatitudes[i] > maxLat) maxLat = buildingVerticesLatitudes[i];
+            if (buildingVerticesLongitudes[i] < minLng) minLng = buildingVerticesLongitudes[i];
+            if (buildingVerticesLongitudes[i] > maxLng) maxLng = buildingVerticesLongitudes[i];
+
+            centroidLat += buildingVerticesLatitudes[i];
+            centroidLng += buildingVerticesLongitudes[i];
         }
-        return inside;
+        centroidLat /= buildingVerticesLatitudes.length;
+        centroidLng /= buildingVerticesLongitudes.length;
+
+        // Definir un margen de tolerancia (puedes ajustar este valor según sea necesario)
+        double tolerance = 0.000130;
+
+        // Verificar si la ubicación dada está dentro del rectángulo del edificio con margen de tolerancia
+        return (userLat >= (centroidLat - tolerance) && userLat <= (centroidLat + tolerance) &&
+                userLng >= (centroidLng - tolerance) && userLng <= (centroidLng + tolerance));
     }
 
     @Override

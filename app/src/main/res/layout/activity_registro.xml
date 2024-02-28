@@ -96,9 +96,25 @@
                 android:hint="Apellido Materno" />
 
             <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Selecciona tu carrera:" />
+
+            <Spinner
+                android:id="@+id/carrera_actual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/spinner_carreraActual"/>
+
+            <TextView
                 android:id="@+id/textView74"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="20sp"

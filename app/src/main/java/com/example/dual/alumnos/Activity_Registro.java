@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import org.json.JSONObject;
 
 public class Activity_Registro extends AppCompatActivity {
     private EditText nombre, paterno, materno, matricula, curp;
+    Spinner carreraActual;
     String crud;
     static WebService obj = new WebService();
     @Override
@@ -30,13 +33,15 @@ public class Activity_Registro extends AppCompatActivity {
         materno = (EditText) findViewById(R.id.materno_et);
         matricula = (EditText) findViewById(R.id.matricula_et);
         curp = (EditText) findViewById(R.id.curp_et);
+        carreraActual = (Spinner) findViewById(R.id.carrera_actual);
     }
     public void registrarUsuario (View view){
         if (matricula.getText().toString().isEmpty()
                 || curp.getText().toString().isEmpty()
                 || nombre.getText().toString().isEmpty()
                 || paterno.getText().toString().isEmpty()
-                || materno.getText().toString().isEmpty()) {
+                || materno.getText().toString().isEmpty()
+                || carreraActual.getSelectedItem().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "registro";
@@ -45,7 +50,8 @@ public class Activity_Registro extends AppCompatActivity {
                     curp.getText().toString(),
                     nombre.getText().toString(),
                     paterno.getText().toString(),
-                    materno.getText().toString());
+                    materno.getText().toString(),
+                    carreraActual.getSelectedItem().toString());
         }
     }
     class MiAsyncTask extends AsyncTask<String, String, Void> {
@@ -54,7 +60,7 @@ public class Activity_Registro extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "registro":
-                    msj = obj.registarUsuario(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5]);
+                    msj = obj.registarUsuario(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6]);
                     publishProgress(msj);
                     break;
             }
@@ -75,6 +81,12 @@ public class Activity_Registro extends AppCompatActivity {
                 nombre.setText(json_data.getString("nombre"));
                 paterno.setText(json_data.getString("apellido_paterno"));
                 materno.setText(json_data.getString("apellido_materno"));
+
+                String carreraActualValue = json_data.getString("carreraActual");
+                int posicionCarreraActual = obtenerPosicionEnArray(carreraActual, carreraActualValue);
+                carreraActual.setSelection(posicionCarreraActual);
+
+
                 Toast.makeText(Activity_Registro.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
 
                 // Inicio de sesión exitoso, cambiar a la siguiente actividad
@@ -92,5 +104,10 @@ public class Activity_Registro extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), progress[0], Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    private int obtenerPosicionEnArray(Spinner spinner, String valor) {
+        ArrayAdapter adapter = (ArrayAdapter) spinner.getAdapter();
+        return adapter.getPosition(valor);
     }
 }

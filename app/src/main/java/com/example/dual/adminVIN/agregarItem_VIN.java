@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dual.R;
 import com.example.dual.WebService;
+import com.example.dual.adminCE.agregarItem_CE;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,12 +80,11 @@ public class agregarItem_VIN extends AppCompatActivity {
                 titulo_et.setText(json_data.getString("titulo"));
                 descripcion_et.setText(json_data.getString("descripcion"));
 
-                Toast.makeText(agregarItem_VIN.this, "Publicacion creada.", Toast.LENGTH_SHORT).show();
-
             } catch (JSONException e) {
                 titulo_et.setText("");
                 descripcion_et.setText("");
-                Toast.makeText(getApplicationContext(), progress[0], Toast.LENGTH_LONG).show();
+
+                Toast.makeText(agregarItem_VIN.this, "Publicacion creada.", Toast.LENGTH_SHORT).show();
             }
         }
     }

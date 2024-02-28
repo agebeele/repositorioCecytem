@@ -93,9 +93,9 @@ public class formulario_becas extends AppCompatActivity {
 
             new MiAsyncTask().execute(crud,
                     curp.getText().toString(),
+                    nombres.getText().toString(),
                     paterno.getText().toString(),
                     materno.getText().toString(),
-                    nombres.getText().toString(),
                     fechaNacimieto.getText().toString(),
                     sexo.getText().toString(),
                     estadoNacimiento.getText().toString(),
@@ -118,6 +118,7 @@ public class formulario_becas extends AppCompatActivity {
                     fechaActual,
                     horaActual);
 
+
             Toast.makeText(formulario_becas.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
     }
@@ -130,7 +131,7 @@ public class formulario_becas extends AppCompatActivity {
                     msj = obj.solicitarBeca(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7],
                             parameter[8], parameter[9], parameter[10], parameter[11], parameter[12], parameter[13], parameter[14], parameter[15],
                             parameter[16], parameter[17], parameter[18], parameter[19], parameter[20], parameter[21], parameter[22], parameter[23],
-                            parameter[24], parameter[25], parameter[26]);
+                            parameter[24], parameter[25]);
                     publishProgress(msj);
                     break;
             }
@@ -148,7 +149,7 @@ public class formulario_becas extends AppCompatActivity {
                     curp.setText(json_data.getString("curp"));
                     paterno.setText(json_data.getString("paterno"));
                     materno.setText(json_data.getString("materno"));
-                    nombres.setText(json_data.getString("nombres"));
+                    nombres.setText(json_data.getString("nombre"));
                     fechaNacimieto.setText(json_data.getString("fecha_nacimiento"));
                     sexo.setText(json_data.getString("sexo"));
                     estadoNacimiento.setText(json_data.getString("estado_nacimiento"));
@@ -195,11 +196,7 @@ public class formulario_becas extends AppCompatActivity {
                 codigoPostal.setText("");
                 escuelaSecundaria.setText("");
                 promedioGeneral.setText("");
-
-                Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }
-
-
 }

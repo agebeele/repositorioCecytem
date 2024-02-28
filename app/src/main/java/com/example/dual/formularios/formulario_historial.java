@@ -114,8 +114,6 @@ public class formulario_historial extends AppCompatActivity {
                 apellidoPaterno.setText("");
                 apellidoMaterno.setText("");
                 observaciones.setText("");
-
-                Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }

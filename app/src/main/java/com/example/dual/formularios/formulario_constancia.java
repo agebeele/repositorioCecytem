@@ -117,8 +117,6 @@ public class formulario_constancia extends AppCompatActivity {
                 paterno.setText("");
                 materno.setText("");
                 observaciones.setText("");
-
-                Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
     }

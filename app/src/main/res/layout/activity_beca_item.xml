@@ -214,7 +214,7 @@
                         android:id="@+id/textSexo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Observaciones:"
+                        android:text="Sexo::"
                         android:textColor="@color/black"
                         android:textSize="22sp"
                         android:textStyle="bold" />
