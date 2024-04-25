@@ -1,5 +1,6 @@
 package com.example.dual.alumnos;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,23 +11,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dual.R;
 
 public class MainActivity extends AppCompatActivity {
-    // Declaración de la barra de progreso
-    private ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main); // Asegúrate de inflar el diseño de tu actividad
 
-        // Establece el diseño de la actividad
-        setContentView(R.layout.activity_main);
+        // Obtén la referencia de la ProgressBar desde el diseño
+        ProgressBar progressBar = findViewById(R.id.progressBar);
 
-        // Inicializa la barra de progreso utilizando su ID del diseño
-        progressBar = findViewById(R.id.progressBar);
+        // Crea un objeto ObjectAnimator para animar el progreso de la ProgressBar
+        ObjectAnimator progressAnimator = ObjectAnimator.ofInt(progressBar, "progress", 0, 100);
 
-        // Establece el progreso inicial de la barra de progreso (opcional)
-        progressBar.setProgress(0);
+        // Establece la duración de la animación en milisegundos (en este caso, 5000 ms o 5 segundos)
+        progressAnimator.setDuration(5000);
 
-        // Configura un Handler para retrasar la navegación a otra actividad
+        // Inicia la animación
+        progressAnimator.start();
+
+        // Configura un Handler para iniciar la nueva actividad después de 5 segundos
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

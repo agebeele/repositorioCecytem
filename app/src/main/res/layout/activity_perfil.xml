@@ -26,21 +26,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Mi Perfil" />
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             app:cardBackgroundColor="#FFFFFF"
             android:layout_margin="10dp"
             app:cardCornerRadius="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:orientation="horizontal">
 
@@ -52,7 +62,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <TextView
@@ -60,7 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="Brandon Adrian Lopez Garcia"
+                            android:text="Nombre del alumno/a"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
@@ -69,7 +79,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="201920439"
+                            android:text="1111111"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
@@ -78,7 +88,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:text="Soporte y Mantenimiento"
+                            android:text="Soporte y Mantenimiento en equipo de computo"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
                     </LinearLayout>
@@ -106,7 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Informacio Personal"
+                    android:text="Información Personal"
                     android:textColor="@color/verde_1"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -127,7 +137,7 @@
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Apellido Paterno"
+                            android:text="Apellido Paterno:"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -152,7 +162,7 @@
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Apellido Materno"
+                            android:text="Apellido Materno:"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -177,7 +187,7 @@
                             android:layout_width="30dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Nombres"
+                            android:text="Nombres:"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />

@@ -32,18 +32,18 @@ public class Activity_Aspirantes extends AppCompatActivity {
         ImageAdapter imageAdapter = new ImageAdapter(images);
         viewPager.setAdapter(imageAdapter);
 
-        datos.setText("- La convocatoria:     \n" +
-                "Se pública el 22 de Enero del 2023 en la siguiente página. \n" +
-                "- Pre-Registro:  \n" +
-                "El 1 al 26 de Marzo pre-registro de aspirantes vía internet 103 municipios.\n" +
-                "- Registro:  \n" +
-                "El 17 al 21 de Abril registro de aspirantes 103 municipios.\n" +
-                "- Examen:  \n" +
-                "Se aplicará el Domingo 11 de junio en el horario, sede y grupo que le corresponda.\n" +
-                "- Resultados:  \n" +
-                "6 de Agosto publicación de resultados 103 municipios.\n" +
-                "- Inscripción:     \n" +
-                "La inscripción se llevará a cabo  en las fechas indicadas por el Colegio, difundidas el día de la publicación de resultados.\n" +
+        datos.setText("La convocatoria       \n" +
+                "Se pública el 24 de enero del 2024 en la siguiente página \n" +
+                "Pre-Registro    \n" +
+                "El 24 de enero al 23 de febrero pre-registro de aspirantes vía internet 103 municipios\n" +
+                "Registro    \n" +
+                "El 4 al 15 de marzo registro de aspirantes 103 municipios\n" +
+                "Examen    \n" +
+                "Se aplicará el 23 de junio en el horario de 9:00 hrs, sede y grupo que le corresponda.\n" +
+                "Resultados    \n" +
+                "16 de julio, publicación de resultados 103 municipios\n" +
+                "Inscripción       \n" +
+                "La inscripción se llevará a cabo  en las fechas indicadas por el Colegio, difundidas el día de la publicación de resultados." +
                 "\n");
 
         informacion.setText("En el CECyTEM Plantel Coacalco contamos con las siguientes instalaciones:" +

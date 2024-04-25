@@ -134,24 +134,9 @@
                 android:onClick="enviarDatosCredencial"
                 android:text="Enviar" />
 
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="¿No te sabes los ultimos 3 digitos de tu matricula?"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Consultalo aqui"
-                    android:textAlignment="center"
-                    android:textColor="@color/verde_1"
-                    android:textSize="18sp" />
-            </LinearLayout>
+
+        </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
