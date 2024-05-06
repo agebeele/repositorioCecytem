@@ -1167,7 +1167,7 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarServicio(String hora, String fecha, String nombre, String promedio, String telefonocasa, String telefonocelular, String grupo, String correoins, String nombredepe, String cct, String turno, String domiciliode, String telefonodepe, String nivel, String nombreres, String cargores, String actividades, String horario, String nombrepadre) {
+    public String solicitarServicio(String hora, String fecha, String nombre, String promedio, String telefonocasa, String telefonocelular, String grupo, String correoins, String nombredepe, String cct, String turno, String domiciliode, String telefonodepe, String nivel, String nombreres, String cargores, String actividades, String horario, String nombrepadre){
 
         String response = "";
         try {

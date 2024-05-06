@@ -29,7 +29,6 @@ public class FragmentCE_Inicio extends Fragment {
 
     RecyclerView recyclerView;
     AdapterCE adapterCE;
-    //private List<item_ce> item_ceList;
     FloatingActionButton agregarItem;
     String msj;
     WebService obj = new WebService();
