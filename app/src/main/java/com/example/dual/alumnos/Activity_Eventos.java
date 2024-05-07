@@ -9,7 +9,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dual.R;
@@ -56,6 +56,9 @@ public class Activity_Eventos extends AppCompatActivity {
                 actualizarEventos(year, monthOfYear, dayOfMonth);
             }
         });
+
+        // Actualizar eventos para mostrar los eventos de hoy al iniciar la actividad
+        actualizarEventos(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
     }
 
     private void guardarEvento() {
@@ -63,15 +66,22 @@ public class Activity_Eventos extends AppCompatActivity {
         String descripcion = eventDescription.getText().toString();
         String fecha = obtenerFechaDatePicker();
 
-        // Llama al AsyncTask para enviar datos al servidor
-        new GuardarEventoTask().execute(titulo, descripcion, fecha);
+        // Guardar el evento localmente
+        guardarEventoLocalmente(titulo, descripcion, fecha);
+
+        // Limpiar campos
+        eventTitle.setText("");
+        eventDescription.setText("");
+
+        // Actualizar eventos para mostrar el nuevo evento agregado
+        actualizarEventos(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
     }
 
     private void actualizarEventos(int year, int monthOfYear, int dayOfMonth) {
         String fechaSeleccionada = obtenerFecha(year, monthOfYear, dayOfMonth);
-
-        // Llama al AsyncTask para obtener eventos del servidor
-        new ObtenerEventosTask().execute(fechaSeleccionada);
+        mostrarEventosLocalmente(fechaSeleccionada);
+        // Obtener eventos de la base de datos remota
+        new ObtenerEventosRemotosTask().execute(fechaSeleccionada);
     }
 
     private String obtenerFechaDatePicker() {
@@ -83,40 +93,76 @@ public class Activity_Eventos extends AppCompatActivity {
         return String.format(Locale.getDefault(), "%04d-%02d-%02d", year, month, day);
     }
 
-
     private String obtenerFecha(int year, int month, int day) {
-        return year + "-" + String.format("%02d", month) + "-" + String.format("%02d", day);
+        return year + "-" + String.format("%02d", month + 1) + "-" + String.format("%02d", day);
     }
 
-    private class GuardarEventoTask extends AsyncTask<String, Void, String> {
-        @Override
-        protected String doInBackground(String... params) {
-            // params[0]: titulo, params[1]: descripcion, params[2]: fecha
-            return obj.agregarEvento(params[0], params[1], params[2]);
-        }
-
-        @Override
-        protected void onPostExecute(String resultado) {
-            // Muestra el resultado en un mensaje Toast
-            Toast.makeText(Activity_Eventos.this, "Evento agregado" + resultado, Toast.LENGTH_SHORT).show();
-
-            // Vacía los campos del título y la descripción
-            eventTitle.setText("");
-            eventDescription.setText("");
-
-            // Actualiza los eventos para mostrar el nuevo evento agregado
-            actualizarEventos(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+    private void guardarEventoLocalmente(String titulo, String descripcion, String fecha) {
+        SharedPreferences sharedPreferences = getSharedPreferences("Eventos", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        try {
+            JSONArray eventosArray;
+            if (sharedPreferences.contains("eventos")) {
+                eventosArray = new JSONArray(sharedPreferences.getString("eventos", "[]"));
+            } else {
+                eventosArray = new JSONArray();
+            }
+            JSONObject evento = new JSONObject();
+            evento.put("titulo", titulo);
+            evento.put("descripcion", descripcion);
+            evento.put("fecha", fecha);
+            eventosArray.put(evento);
+            editor.putString("eventos", eventosArray.toString());
+            editor.apply();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
-    private class ObtenerEventosTask extends AsyncTask<String, Void, String> {
+    private void mostrarEventosLocalmente(String fechaSeleccionada) {
+        SharedPreferences sharedPreferences = getSharedPreferences("Eventos", MODE_PRIVATE);
+        if (sharedPreferences.contains("eventos")) {
+            try {
+                JSONArray eventosArray = new JSONArray(sharedPreferences.getString("eventos", "[]"));
+
+                // Mostrar solo los eventos que coinciden con la fecha seleccionada
+                StringBuilder eventosMostrados = new StringBuilder();
+
+                for (int i = 0; i < eventosArray.length(); i++) {
+                    JSONObject evento = eventosArray.getJSONObject(i);
+
+                    // Obtén la fecha del evento
+                    String fechaEvento = evento.getString("fecha");
+
+                    // Compara las fechas formateadas
+                    if (fechaEvento.equals(fechaSeleccionada)) {
+                        // Agregar la información del evento al StringBuilder
+                        String titulo = evento.getString("titulo");
+                        String descripcion = evento.getString("descripcion");
+                        eventosMostrados.append("Título: ").append(titulo).append("\nDescripción: ").append(descripcion).append("\n\n");
+                    }
+                }
+
+                // Mostrar los eventos en el TextView
+                if (eventosMostrados.length() > 0) {
+                    eventTextView.setText(eventosMostrados.toString());
+                } else {
+                    eventTextView.setText("No hay eventos locales para esta fecha.");
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            eventTextView.setText("No hay eventos locales para esta fecha.");
+        }
+    }
+
+    private class ObtenerEventosRemotosTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             // params[0]: fecha seleccionada
-            String fechaSeleccionada = obtenerFechaDatePicker();
-            Log.d("FechaSeleccionada", fechaSeleccionada);
-
-            return obj.obtenerEventos(fechaSeleccionada);
+            return obj.obtenerEventos(params[0]);
         }
 
         @Override
@@ -125,31 +171,23 @@ public class Activity_Eventos extends AppCompatActivity {
                 // Convierte el string JSON a un objeto JSON
                 JSONArray eventosArray = new JSONArray(eventosJson);
 
-                // Muestra solo los eventos que coinciden con la fecha seleccionada
-                StringBuilder eventosMostrados = new StringBuilder();
+                // Muestra los eventos remotos en el TextView
+                StringBuilder eventosRemotos = new StringBuilder();
 
                 for (int i = 0; i < eventosArray.length(); i++) {
                     JSONObject evento = eventosArray.getJSONObject(i);
 
-                    // Obtén la fecha del evento
-                    String fechaEvento = evento.getString("fecha");
-                    Log.d("FechaEvento", fechaEvento);
-
-                    // Compara las fechas formateadas
-                    if (fechaEvento.equals(fechaEvento)) {
-                        // Agrega la información del evento al StringBuilder
-                        String titulo = evento.getString("titulo");
-                        String descripcion = evento.getString("descripcion");
-                        eventosMostrados.append("Título: ").append(titulo).append("\nDescripción: ").append(descripcion).append("\n\n");
-                    }
+                    // Agregar la información del evento al StringBuilder
+                    String titulo = evento.getString("titulo");
+                    String descripcion = evento.getString("descripcion");
+                    eventosRemotos.append("Título: ").append(titulo).append("\nDescripción: ").append(descripcion).append("\n\n");
                 }
 
-                // Muestra los eventos en el TextView
-                if (eventosMostrados.length() > 0) {
-                    eventTextView.setText(eventosMostrados.toString());
+                // Mostrar los eventos remotos en el TextView
+                if (eventosRemotos.length() > 0) {
+                    eventTextView.append("\nEventos Remotos:\n\n" + eventosRemotos.toString());
                 } else {
-                    eventTextView.setText("No hay eventos para esta fecha.");
-                    Log.d("InfoEvento", "No se encontraron eventos para la fecha seleccionada.");
+                    eventTextView.append("\nNo hay eventos remotos para esta fecha.");
                 }
 
             } catch (JSONException e) {

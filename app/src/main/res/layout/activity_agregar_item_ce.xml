@@ -65,11 +65,11 @@
             <EditText
                 android:id="@+id/descripcion_et"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="text"
-                android:textAlignment="textStart"
-                android:hint="" />
+                android:hint="Descripción"
+                android:inputType="textMultiLine"
+                android:textAlignment="textStart" />
 
             <Button
                 android:id="@+id/button14"

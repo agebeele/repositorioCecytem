@@ -63,7 +63,7 @@ public class FragmentCE_Config extends Fragment {
     }
 
     private void cambiarEventos() {
-        Intent pantallaEventos = new Intent(getActivity(), Activity_Eventos.class);
+        Intent pantallaEventos = new Intent(getActivity(), AdminCE_Eventos.class);
         startActivity(pantallaEventos);
     }
 

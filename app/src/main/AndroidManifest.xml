@@ -24,6 +24,16 @@
         android:theme="@style/Theme.DUAL"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".adminVIN.AdminVIN_Eventos"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.AdminVIN_Eventos"
+            android:exported="false"
+            android:label="@string/title_activity_admin_vin_eventos" />
+        <activity
+            android:name=".adminCE.AdminCE_Eventos"
+            android:exported="false" />
+        <activity
             android:name=".solicitudCambioTurno.cambioTurno_Item"
             android:exported="false" />
         <activity

@@ -62,7 +62,7 @@ public class FragmentVIN_Config extends Fragment {
     }
 
     private void cambiarEventos() {
-        Intent pantallaEventos = new Intent(getActivity(), Activity_Eventos.class);
+        Intent pantallaEventos = new Intent(getActivity(), AdminVIN_Eventos.class);
         startActivity(pantallaEventos);
     }
 

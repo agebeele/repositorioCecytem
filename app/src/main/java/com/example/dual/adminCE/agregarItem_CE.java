@@ -2,8 +2,11 @@ package com.example.dual.adminCE;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +35,18 @@ public class agregarItem_CE extends AppCompatActivity {
 
         titulo = findViewById(R.id.titulo_et);
         descripcion = findViewById(R.id.descripcion_et);
+
+        // Configurar el EditText para detectar el evento "Enter" en el teclado virtual
+        descripcion.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || (keyEvent != null && keyEvent.getAction() == KeyEvent.ACTION_DOWN && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    descripcion.append("\n");
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void crearPublicacion(View view) {
