@@ -8,90 +8,107 @@
     tools:context=".adminVIN.AdminVIN_Eventos">
 
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="9dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+        app:layout_constraintEnd_toStartOf="@+id/scrollView4"
+        app:layout_constraintStart_toEndOf="@+id/scrollView4"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView4">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Agrega recordatorios"
+            android:textAlignment="center"
+            android:textColor="@color/verde_2"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:datePickerMode="calendar"
+            android:dayOfWeekTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:hapticFeedbackEnabled="false"
+            android:headerBackground="@color/verde_1"
+            android:headerDayOfMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:headerMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:headerYearTextAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:yearListItemTextAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <EditText
+            android:id="@+id/eventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Título del evento"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/eventDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Descripción del evento"
+            android:inputType="textMultiLine" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Agrega recordatorios"
-                android:textAlignment="center"
-                android:textColor="@color/verde_2"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-            <DatePicker
-                android:id="@+id/datePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:datePickerMode="calendar"
-                android:dayOfWeekTextAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:hapticFeedbackEnabled="false"
-                android:headerBackground="@color/verde_1"
-                android:headerDayOfMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:headerMonthTextAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:headerYearTextAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:yearListItemTextAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-            <EditText
-                android:id="@+id/eventTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:hint="Título del evento" />
-
-            <EditText
-                android:id="@+id/eventDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:hint="Descripción del evento" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/saveButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Guardar" />
-
-                <Space
-                    android:layout_width="20dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0" />
-
-                <Button
-                    android:id="@+id/borrarEvento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Borrar" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/eventTextView"
+            <Button
+                android:id="@+id/saveButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text=""
-                android:textColor="@android:color/black" />
+                android:text="Guardar" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Borrar" />
         </LinearLayout>
-    </ScrollView>
+
+        <TextView
+            android:id="@+id/eventTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

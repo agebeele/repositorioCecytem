@@ -10,7 +10,7 @@
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <solid android:color="@color/verde_1" />  <!-- Cambia el color según tus preferencias -->
+                <solid android:color="@color/verde_3" />  <!-- Cambia el color según tus preferencias -->
             </shape>
         </clip>
     </item>
