@@ -93,16 +93,6 @@
                 android:onClick="login"
                 android:text="Iniciar Sesión" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:onClick="registrarUsuario"
-                android:text="Registrarme" />
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

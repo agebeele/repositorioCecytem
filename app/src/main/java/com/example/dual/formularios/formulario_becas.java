@@ -25,6 +25,7 @@ public class formulario_becas extends AppCompatActivity {
             telefonoCasa, telefonoAlumno, telefonoPadre, nombreCalle, noExterior,
             noInterior, nombreColonia, municipio, estadoDomicilio, codigoPostal,
             escuelaSecundaria, promedioGeneral;
+
     String crud;
     static WebService obj = new WebService();
 

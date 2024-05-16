@@ -11,7 +11,7 @@ public class WebService {
     public String login(String matricula, String curp) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/login_usuarios.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/login_usuarios.php");
 
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
@@ -55,7 +55,7 @@ public class WebService {
     public String registarUsuario (String matricula, String curp, String nombre, String paterno, String materno, String carreraActual) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/registro_usuarios.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/registro_usuarios.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -99,7 +99,7 @@ public class WebService {
     public String datosUsuario(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/mostrar_datos.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/mostrar_datos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -129,7 +129,7 @@ public class WebService {
     public String muroPublicaciones() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/publicaciones_buscar.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/publicaciones_buscar.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -167,7 +167,7 @@ public class WebService {
     public String login_admin(String matricula, String curp) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/login_admin.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/login_admin.php");
 
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
@@ -210,7 +210,7 @@ public class WebService {
     public String login_adminVIN(String matricula, String curp) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/login_adminVin.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/login_adminVin.php");
 
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
@@ -253,7 +253,7 @@ public class WebService {
     public String agregarEvento(String titulo, String descripcion, String fecha) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/eventos.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -281,7 +281,7 @@ public class WebService {
     public String eliminarEvento(String fecha) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/eliminar_eventos.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/eliminar_eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -320,7 +320,7 @@ public class WebService {
     public String obtenerEventos(String fecha) {
         String aux = "";
         try {
-                URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/mostrar_eventos.php");
+                URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/mostrar_eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -386,7 +386,7 @@ public class WebService {
     public String datosAdminCE(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/datos_adminCE.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/datos_adminCE.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -416,7 +416,7 @@ public class WebService {
     public String datosAdminVIN(String matricula) {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/datos_adrminVIN.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/datos_adrminVIN.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -446,7 +446,7 @@ public class WebService {
     public String solicitudesCredencial() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_credencial.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_credencial.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -474,7 +474,7 @@ public class WebService {
     public String solicitudesConstancia() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_constancia.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_constancia.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -502,7 +502,7 @@ public class WebService {
     public String solicitudesHistorial() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_historial.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_historial.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -530,7 +530,7 @@ public class WebService {
     public String solicitudesBecas() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_becas.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_becas.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -558,7 +558,7 @@ public class WebService {
     public String solicitudesServicio() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_servicio.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_servicio.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -586,7 +586,7 @@ public class WebService {
     public String solicitudesEventos() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_eventos.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_eventos.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -614,7 +614,7 @@ public class WebService {
     public String solicitudesCambioGrupo() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_cambioGrupo.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_cambioGrupo.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -642,7 +642,7 @@ public class WebService {
     public String solicitudesCambioTurno() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_cambioTurno.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_cambioTurno.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -670,7 +670,7 @@ public class WebService {
     public String solicitudesCambioCarrera() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_cambioCarrera.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_cambioCarrera.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -698,7 +698,7 @@ public class WebService {
     public String solicitudesCambioPlantel() {
         String aux = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitudes_cambioPlantel.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitudes_cambioPlantel.php");
             HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
             conexion.setRequestMethod("POST");
             conexion.setDoOutput(true);
@@ -726,7 +726,7 @@ public class WebService {
     public String crearPublicacion (String titulo, String descripcion, String fecha, String hora) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/crearPublicacion.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/crearPublicacion.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -765,10 +765,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarCredencial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora) {
+    public String solicitarCredencial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_credencial.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_credencial.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -780,7 +780,8 @@ public class WebService {
                     + "&hora=" + URLEncoder.encode(hora, "UTF-8")
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")
                     + "&apellido_paterno=" + URLEncoder.encode(paterno, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -810,10 +811,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarConstancia(String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones) {
+    public String solicitarConstancia(String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_constancia.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_constancia.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -825,7 +826,8 @@ public class WebService {
                     + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
                     + "&fecha=" + URLEncoder.encode(fecha, "UTF-8")
                     + "&hora=" + URLEncoder.encode(hora, "UTF-8")
-                    + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8");
+                    + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
@@ -856,10 +858,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarHistorial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones) {
+    public String solicitarHistorial (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String observaciones, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_historial.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_historial.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -872,7 +874,8 @@ public class WebService {
                     + "&nombre=" + URLEncoder.encode(nombre, "UTF-8")
                     + "&apellido_paterno=" + URLEncoder.encode(paterno, "UTF-8")
                     + "&observaciones=" + URLEncoder.encode(observaciones, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -905,7 +908,7 @@ public class WebService {
     public String solicitarCambioTurno(String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String turnoActual, String turnoCambio, String promedio) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_cambioTurno.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_cambioTurno.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -951,10 +954,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarCambioGrupo (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String grupoActual,String grupoCambio, String promedio) {
+    public String solicitarCambioGrupo (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String grupoActual,String grupoCambio, String promedio, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_cambioGrupo.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_cambioGrupo.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -970,7 +973,8 @@ public class WebService {
                     + "&grupoActual=" + URLEncoder.encode(grupoActual, "UTF-8")
                     + "&grupoCambio=" + URLEncoder.encode(grupoCambio, "UTF-8")
                     + "&promedio=" + URLEncoder.encode(promedio, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -1000,10 +1004,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarCambioCarrera (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String carreraActual,String carreraCambio, String promedio) {
+    public String solicitarCambioCarrera (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String carreraActual,String carreraCambio, String promedio, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_cambioCarrera.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_cambioCarrera.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -1019,7 +1023,8 @@ public class WebService {
                     + "&carreraActual=" + URLEncoder.encode(carreraActual, "UTF-8")
                     + "&carreraCambio=" + URLEncoder.encode(carreraCambio, "UTF-8")
                     + "&promedio=" + URLEncoder.encode(promedio, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -1049,10 +1054,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarCambioPlantel (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String plantelActual,String plantelCambio, String promedio) {
+    public String solicitarCambioPlantel (String matricula, String grupo, String nombre, String paterno, String materno, String fecha, String hora, String motivos, String plantelActual,String plantelCambio, String promedio, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_cambioPlantel.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_cambioPlantel.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -1068,7 +1073,8 @@ public class WebService {
                     + "&plantelActual=" + URLEncoder.encode(plantelActual, "UTF-8")
                     + "&plantelCambio=" + URLEncoder.encode(plantelCambio, "UTF-8")
                     + "&promedio=" + URLEncoder.encode(promedio, "UTF-8")
-                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8");
+                    + "&apellido_materno=" + URLEncoder.encode(materno, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -1101,7 +1107,7 @@ public class WebService {
     public String solicitarBeca(String curp, String nombre, String paterno,String materno, String fecha, String hora, String fechaNacimiento, String sexo, String estadoNacimiento, String situacionAcademica, String semestre, String correoPersonal, String correoInstitucional,String telefonoCasa, String telefonoAlumno, String telefonoPadre, String domicilio, String noExterior, String noInterior, String nombreColonia, String municipio, String estadoDomicilio, String codigoPostal, String escuelaProcedencia, String promedio) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_beca.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_beca.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -1161,10 +1167,10 @@ public class WebService {
         }
         return response;
     }
-    public String solicitarEvento(String fecha, String hora, String matricula, String nombre, String telefonocasa, String telefonocelular, String grupo, String evento) {
+    public String solicitarEvento(String fecha, String hora, String matricula, String nombre, String telefonocasa, String telefonocelular, String grupo, String evento, String correo) {
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_evento.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_evento.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
@@ -1177,7 +1183,8 @@ public class WebService {
                     + "&telefonocasa=" + URLEncoder.encode(telefonocasa, "UTF-8")
                     + "&telefonocelular=" + URLEncoder.encode(telefonocelular, "UTF-8")
                     + "&grupo=" + URLEncoder.encode(grupo, "UTF-8")
-                    + "&evento=" + URLEncoder.encode(evento, "UTF-8");
+                    + "&evento=" + URLEncoder.encode(evento, "UTF-8")
+                    + "&correo=" + URLEncoder.encode(correo, "UTF-8");
 
             OutputStreamWriter writer = new OutputStreamWriter(connection.getOutputStream());
             writer.write(data);
@@ -1211,7 +1218,7 @@ public class WebService {
 
         String response = "";
         try {
-            URL url = new URL("http://192.168.100.74:80/conexion_cecytem/cecy/solicitar_servicio.php");
+            URL url = new URL("http://192.168.100.13:80/conexion_cecytem/cecy/solicitar_servicio.php");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);

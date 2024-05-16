@@ -20,7 +20,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class formulario_historial extends AppCompatActivity {
-    TextView numeroControl, grupo, apellidoPaterno, apellidoMaterno, nombre, observaciones;
+    TextView numeroControl, grupo, apellidoPaterno, apellidoMaterno, nombre, observaciones, correo;
     String crud;
     static WebService obj = new WebService();
 
@@ -35,6 +35,7 @@ public class formulario_historial extends AppCompatActivity {
         apellidoMaterno = findViewById(R.id.materno_historial);
         nombre = findViewById(R.id.nombre_historial);
         observaciones = findViewById(R.id.observaciones_historial);
+        correo = findViewById(R.id.correo_historial);
     }
 
     public void enviarDatosHistorial(View view) {
@@ -44,7 +45,8 @@ public class formulario_historial extends AppCompatActivity {
                 || nombre.getText().toString().isEmpty()
                 || observaciones.getText().toString().isEmpty()
                 || apellidoPaterno.getText().toString().isEmpty()
-                || apellidoMaterno.getText().toString().isEmpty()) {
+                || apellidoMaterno.getText().toString().isEmpty()
+                || correo.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "solicitarHistorial";
@@ -63,7 +65,8 @@ public class formulario_historial extends AppCompatActivity {
                     apellidoMaterno.getText().toString(),
                     fechaActual,
                     horaActual,
-                    observaciones.getText().toString());
+                    observaciones.getText().toString(),
+                    correo.getText().toString());
 
             Toast.makeText(formulario_historial.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -75,7 +78,7 @@ public class formulario_historial extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "solicitarHistorial":
-                    msj = obj.solicitarHistorial(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8]);
+                    msj = obj.solicitarHistorial(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8], parameter[9]);
                     publishProgress(msj);
                     break;
             }
@@ -97,6 +100,7 @@ public class formulario_historial extends AppCompatActivity {
                     apellidoPaterno.setText(json_data.getString("apellido_paterno"));
                     apellidoMaterno.setText(json_data.getString("apellido_materno"));
                     observaciones.setText(json_data.getString("observaciones"));
+                    correo.setText(json_data.getString("correo"));
                 } else {
                     // Manejar el caso en que el JSONArray está vacío
                     numeroControl.setText("");
@@ -105,6 +109,7 @@ public class formulario_historial extends AppCompatActivity {
                     apellidoPaterno.setText("");
                     apellidoMaterno.setText("");
                     observaciones.setText("");
+                    correo.setText("");
                 }
             } catch (JSONException e) {
                 // Manejar errores de parsing JSON
@@ -114,6 +119,7 @@ public class formulario_historial extends AppCompatActivity {
                 apellidoPaterno.setText("");
                 apellidoMaterno.setText("");
                 observaciones.setText("");
+                correo.setText("");
             }
         }
     }

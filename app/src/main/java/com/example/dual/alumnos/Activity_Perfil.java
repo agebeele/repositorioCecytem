@@ -18,7 +18,7 @@ import org.json.JSONObject;
 
 public class Activity_Perfil extends AppCompatActivity {
     TextView nombreGeneral, matriculaGeneral, carrera;
-    TextView nombre, apellido_paterno, apellido_materno;
+    TextView nombre, apellido_paterno, apellido_materno, correo_electronico, telefono;
     WebService obj = new WebService();
 
     @Override
@@ -32,6 +32,8 @@ public class Activity_Perfil extends AppCompatActivity {
         apellido_paterno = findViewById(R.id.infoPaterno_user);
         apellido_materno = findViewById(R.id.infoMaterno_user);
         carrera = findViewById(R.id.carreraUsuario);
+        correo_electronico = findViewById(R.id.infoCorreo_user);
+        telefono = findViewById(R.id.infoTelefono_user);
 
         // Recuperar la matrícula guardada en SharedPreferences
         SharedPreferences preferences = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
@@ -42,6 +44,8 @@ public class Activity_Perfil extends AppCompatActivity {
             datosUserTask.setTaskType("datosUser");
             datosUserTask.execute(matricula);
 
+
+            //BODEGA B CON LA PERSONA
         }
     }
 
@@ -86,7 +90,8 @@ public class Activity_Perfil extends AppCompatActivity {
                             apellido_paterno.setText(usuarioData.getString("apellido_paterno"));
                             apellido_materno.setText(usuarioData.getString("apellido_materno"));
                             carrera.setText(usuarioData.getString("carreraActual"));
-
+                            correo_electronico.setText(usuarioData.getString("correo_electronico"));
+                            telefono.setText(usuarioData.getString("telefono"));
                         }
                     } else {
                         // Maneja el caso de error o usuario no encontrado
@@ -98,6 +103,8 @@ public class Activity_Perfil extends AppCompatActivity {
                         apellido_paterno.setText("");
                         apellido_materno.setText("");
                         carrera.setText("");
+                        correo_electronico.setText("");
+                        telefono.setText("");
                         // Mostrar mensaje de error en tu activity
                         Toast.makeText(getApplicationContext(), mensaje, Toast.LENGTH_LONG).show();
                     }

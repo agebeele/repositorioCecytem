@@ -10,14 +10,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="#FFFFFF"
         android:layout_margin="10dp"
-        android:layout_marginBottom="603dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:cardBackgroundColor="#FFFFFF"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,8 +36,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_gravity="center"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -51,17 +47,17 @@
                         android:layout_weight="1"
                         android:text="Colegio de Estudios Cientificos y Tecologicos del Estado de México"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/item_tipoTramite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAlignment="center"
                         android:layout_marginTop="10dp"
+                        android:layout_weight="1"
                         android:text="Tramite: Historial"
+                        android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
@@ -89,10 +85,10 @@
                     android:id="@+id/textFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Fecha de la solicitud:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Fecha de la solicitud:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_fecha"
@@ -106,10 +102,10 @@
                     android:id="@+id/textHora"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Hora:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Hora:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_hora"
@@ -123,10 +119,10 @@
                     android:id="@+id/textMatricula"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Matricula:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Matricula:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_matricula"
@@ -140,10 +136,10 @@
                     android:id="@+id/textNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Nombre:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Nombre:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_nombre"
@@ -157,10 +153,10 @@
                     android:id="@+id/textPaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Apellido paterno:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Apellido paterno:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_apellidoPaterno"
@@ -174,10 +170,10 @@
                     android:id="@+id/textMaterno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Apellido materno:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Apellido materno:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_apellidoMaterno"
@@ -191,10 +187,10 @@
                     android:id="@+id/textGrupo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Grupo:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Grupo:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_grupo"
@@ -208,10 +204,10 @@
                     android:id="@+id/textObservaciones"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:text="Observaciones:"
                     android:textColor="@color/black"
                     android:textSize="22sp"
-                    android:text="Observaciones:" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/item_observaciones"
@@ -221,9 +217,36 @@
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo:"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/item_correo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/notificar_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="Correo"
+                    android:text="Notificar" />
+
             </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

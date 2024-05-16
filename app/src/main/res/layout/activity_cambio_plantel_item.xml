@@ -182,6 +182,28 @@
                         android:text="Plantel"
                         android:textColor="@color/black" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Con correo:"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/item_correoPlantel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Correo"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -251,6 +273,15 @@
                     android:layout_height="wrap_content"
                     android:text="ESTA SOLICITUD NO GARANTIZA EL CAMBIO DE PLANTEL Y ESTARA SUJETO A LA
     DISPONIBILIDAD EN LOS GRUPOS Y NECESIDADES DEL PLANTEL" />
+
+                <Button
+                    android:id="@+id/notificar_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="Correo"
+                    android:text="Notificar" />
             </LinearLayout>
 
         </LinearLayout>

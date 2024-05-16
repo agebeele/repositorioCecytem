@@ -24,7 +24,7 @@ import java.util.Locale;
 
 public class formulario_plantel extends AppCompatActivity {
 
-    EditText numeroControl, nombre, paterno, materno, grupo, promedio, motivos;
+    EditText numeroControl, nombre, paterno, materno, grupo, promedio, motivos, correo;
     TextView carreraActual;
     Spinner carreraCambio;
     String crud;
@@ -43,6 +43,7 @@ public class formulario_plantel extends AppCompatActivity {
         carreraActual = findViewById(R.id.PlantelActual);
         carreraCambio = findViewById(R.id.spinnerPlantel_carreraCambio);
         motivos = findViewById(R.id.motivos_cambioPlantel);
+        correo = findViewById(R.id.correo_cambioPlantel);
     }
     public void enviarDatos_cambioPlantel(View view) {
         if (numeroControl.getText().toString().isEmpty()
@@ -53,7 +54,8 @@ public class formulario_plantel extends AppCompatActivity {
                 || promedio.getText().toString().isEmpty()
                 || carreraActual.getText().toString().isEmpty()
                 || carreraCambio.getSelectedItem().toString().isEmpty()
-                || motivos.getText().toString().isEmpty()) {
+                || motivos.getText().toString().isEmpty()
+                || correo.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "solicitar";
@@ -75,7 +77,8 @@ public class formulario_plantel extends AppCompatActivity {
                     motivos.getText().toString(),
                     carreraActual.getText().toString(),
                     carreraCambio.getSelectedItem().toString(),
-                    promedio.getText().toString());
+                    promedio.getText().toString(),
+                    correo.getText().toString());
 
             Toast.makeText(formulario_plantel.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -86,7 +89,7 @@ public class formulario_plantel extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "solicitar":
-                    msj = obj.solicitarCambioPlantel(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7],parameter[8], parameter[9],parameter[10], parameter[11]);
+                    msj = obj.solicitarCambioPlantel(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7],parameter[8], parameter[9],parameter[10], parameter[11], parameter[12]);
                     publishProgress(msj);
                     break;
             }
@@ -115,6 +118,7 @@ public class formulario_plantel extends AppCompatActivity {
                     carreraCambio.setSelection(posicionCarreraCambio);
 
                     motivos.setText(json_data.getString("motivos"));
+                    correo.setText(json_data.getString("correo"));
 
                     Toast.makeText(formulario_plantel.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
                 }
@@ -127,6 +131,7 @@ public class formulario_plantel extends AppCompatActivity {
                 grupo.setText("");
                 motivos.setText("");
                 promedio.setText("");
+                correo.setText("");
             }
         }
     }

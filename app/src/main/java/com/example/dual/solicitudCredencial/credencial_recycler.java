@@ -34,6 +34,7 @@ public class credencial_recycler extends AppCompatActivity {
     private List<String> fechaList = new ArrayList<>();
     private List<String> horaList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
+    private List<String> correoList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +65,7 @@ public class credencial_recycler extends AppCompatActivity {
                 i.putExtra("apellido_paterno", paternoList.get(position));
                 i.putExtra("apellido_materno", maternoList.get(position));
                 i.putExtra("grupo", grupoList.get(position));
+                i.putExtra("correo", correoList.get(position));
 
                 startActivity(i);
             }
@@ -94,6 +96,7 @@ public class credencial_recycler extends AppCompatActivity {
                     String fecha = json_data.getString("fecha");
                     String hora = json_data.getString("hora");
                     String grupo =  json_data.getString("grupo");
+                    String correo =  json_data.getString("correo");
 
                     nombreList.add(nombre);
                     paternoList.add(paterno);
@@ -103,6 +106,7 @@ public class credencial_recycler extends AppCompatActivity {
                     fechaList.add(fecha);
                     horaList.add(hora);
                     grupoList.add(grupo);
+                    correoList.add(correo);
                 }
             } catch (JSONException e) {
                 Toast.makeText(credencial_recycler.this, progress[0], Toast.LENGTH_LONG).show();

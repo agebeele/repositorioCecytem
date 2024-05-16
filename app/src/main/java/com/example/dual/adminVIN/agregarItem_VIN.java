@@ -33,6 +33,9 @@ public class agregarItem_VIN extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_item_vin);
 
+        titulo_et = findViewById(R.id.titulo_et);
+        descripcion_et = findViewById(R.id.descripcion_et);
+
         // Configurar el EditText para detectar el evento "Enter" en el teclado virtual
         descripcion_et.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -46,7 +49,7 @@ public class agregarItem_VIN extends AppCompatActivity {
         });
     }
 
-    public void agregarPublicacion(View view) {
+    public void crearPublicacion(View view) {
         if (titulo_et.getText().toString().isEmpty() || descripcion_et.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {

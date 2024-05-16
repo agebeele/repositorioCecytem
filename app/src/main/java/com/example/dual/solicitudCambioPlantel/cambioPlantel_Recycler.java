@@ -37,6 +37,7 @@ public class cambioPlantel_Recycler extends AppCompatActivity {
     private List<String> actualList = new ArrayList<>();
     private List<String> cambioList = new ArrayList<>();
     private List<String> motivosList = new ArrayList<>();
+    private List<String> correoList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +72,7 @@ public class cambioPlantel_Recycler extends AppCompatActivity {
                 i.putExtra("plantelActual", actualList.get(position));
                 i.putExtra("plantelCambio", cambioList.get(position));
                 i.putExtra("motivos", motivosList.get(position));
+                i.putExtra("correo", correoList.get(position));
 
                 startActivity(i);
             }
@@ -106,6 +108,7 @@ public class cambioPlantel_Recycler extends AppCompatActivity {
                     String plantelActual = json_data.getString("plantelActual");
                     String plantelCambio = json_data.getString("plantelCambio");
                     String motivos = json_data.getString("motivos");
+                    String correo =  json_data.getString("correo");
 
                     nombreList.add(nombre);
                     paternoList.add(paterno);
@@ -120,6 +123,7 @@ public class cambioPlantel_Recycler extends AppCompatActivity {
                     actualList.add(plantelActual);
                     cambioList.add(plantelCambio);
                     motivosList.add(motivos);
+                    correoList.add(correo);
                 }
             } catch (JSONException e) {
                 Toast.makeText(cambioPlantel_Recycler.this, progress[0], Toast.LENGTH_LONG).show();

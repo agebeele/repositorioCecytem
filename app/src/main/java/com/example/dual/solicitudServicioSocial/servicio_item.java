@@ -1,6 +1,9 @@
 package com.example.dual.solicitudServicioSocial;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -75,5 +78,21 @@ TextView fecha,hora,nombre, promedio, telefonocasa, telefonocelular, grupo, corr
             horario.setText(info_horario);
             nombreP.setText(info_nombrep);
         }
+    }
+    public void enviarCorreo (View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Notificación de trámite en proceso");
+        intent.putExtra(Intent.EXTRA_TEXT, "Estimado/a Alumno/a,\n" +
+                "\n" +
+                "Nos complace informarle que su trámite ya se encuentra en proceso. Le agradecemos su paciencia y colaboración durante este período.\n" +
+                "\n" +
+                "Podrá pasar al día siguiente a recoger la documentación correspondiente en ventanilla de Vinculación.\n" +
+                "\n" +
+                "Si tiene alguna duda o requiere información adicional, no dude en contactarnos.\n" +
+                "\n" +
+                "Atentamente,Vinculación.");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {String.valueOf(correoins)});
+        startActivity(intent);
     }
 }

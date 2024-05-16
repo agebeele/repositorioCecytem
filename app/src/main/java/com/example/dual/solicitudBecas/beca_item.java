@@ -1,7 +1,9 @@
 package com.example.dual.solicitudBecas;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -95,5 +97,21 @@ public class beca_item extends AppCompatActivity {
             EscuelaProcedencia.setText(info_escuelap);
             PromediodeSecundaria.setText(info_promedio);
         }
+    }
+    public void Correo(View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Notificación de trámite en proceso");
+        intent.putExtra(Intent.EXTRA_TEXT, "Estimado/a Alumno/a,\n" +
+                "\n" +
+                "Nos complace informarle que su trámite ya se encuentra en proceso. Le agradecemos su paciencia y colaboración durante este período.\n" +
+                "\n" +
+                "Podrá pasar al día siguiente a recoger la documentación correspondiente en ventanilla de Vinculación.\n" +
+                "\n" +
+                "Si tiene alguna duda o requiere información adicional, no dude en contactarnos.\n" +
+                "\n" +
+                "Atentamente,Vinculación.");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {String.valueOf(CorreoP)});
+        startActivity(intent);
     }
 }

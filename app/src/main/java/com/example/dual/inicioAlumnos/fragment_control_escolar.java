@@ -135,7 +135,7 @@ public class fragment_control_escolar extends Fragment {
         fechaInicioVacaciones.set(Calendar.DAY_OF_MONTH, 13); // Cambia el día según tu necesidad
 
         fechaFinVacaciones.set(Calendar.YEAR, 2024); // Cambia el año según tu necesidad
-        fechaFinVacaciones.set(Calendar.MONTH, Calendar.JANUARY); // Cambia el mes según tu necesidad
+        fechaFinVacaciones.set(Calendar.MONTH, Calendar.DECEMBER); // Cambia el mes según tu necesidad
         fechaFinVacaciones.set(Calendar.DAY_OF_MONTH, 31); // Cambia el día según tu necesidad
 
 // Obtén el array de opciones desde los recursos

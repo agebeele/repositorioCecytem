@@ -16,7 +16,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,6 +144,22 @@
                     android:ems="10"
                     android:hint="Escribe el evento a participar"
                     android:inputType="textEmailAddress" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo Electronico:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtCorreoEvento"
+                    android:hint="Correo Electronico"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/button9"
@@ -162,14 +177,6 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Consultalo aqui"
-                    android:textAlignment="center"
-                    android:textColor="@color/verde_1"
-                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
 

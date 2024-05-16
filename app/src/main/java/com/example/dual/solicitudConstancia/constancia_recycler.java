@@ -36,6 +36,7 @@ public class constancia_recycler extends AppCompatActivity {
     private List<String> horaList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
     private List<String> observacionesList = new ArrayList<>();
+    private List<String> correoList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class constancia_recycler extends AppCompatActivity {
                 i.putExtra("grupo", grupoList.get(position));
                 i.putExtra("matricula", matriculaList.get(position));
                 i.putExtra("observaciones", observacionesList.get(position));
+                i.putExtra("correo", correoList.get(position));
 
                 startActivity(i);
             }
@@ -98,6 +100,7 @@ public class constancia_recycler extends AppCompatActivity {
                     String hora = json_data.getString("hora");
                     String grupo = json_data.getString("grupo");
                     String observaciones =  json_data.getString("observaciones");
+                    String correo =  json_data.getString("correo");
 
                     Log.d("WebService", "Observaciones: " + observaciones);
 
@@ -109,6 +112,7 @@ public class constancia_recycler extends AppCompatActivity {
                     fechaList.add(fecha);
                     horaList.add(hora);
                     grupoList.add(grupo);
+                    correoList.add(correo);
                 }
             } catch (JSONException e) {
                 Toast.makeText(constancia_recycler.this, progress[0], Toast.LENGTH_LONG).show();

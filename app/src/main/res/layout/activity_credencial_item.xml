@@ -13,7 +13,6 @@
         app:cardBackgroundColor="#FFFFFF"
         android:layout_margin="10dp"
         android:layout_marginBottom="603dp"
-        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -203,6 +202,32 @@
                     android:text="Grupo: 606"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo:"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/item_correoCredencial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/notificar_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginVertical="10dp"
+                    android:onClick="Correo"
+                    android:text="Notificar" />
 
             </LinearLayout>
 

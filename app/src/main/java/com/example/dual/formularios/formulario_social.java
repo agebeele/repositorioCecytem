@@ -161,6 +161,7 @@ public class formulario_social extends AppCompatActivity {
                 actividades.setText("");
                 horario.setText("");
                 nombreP.setText("");
+
             }
         }
     }

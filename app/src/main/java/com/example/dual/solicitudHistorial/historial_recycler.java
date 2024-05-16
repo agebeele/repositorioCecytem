@@ -35,6 +35,7 @@ public class historial_recycler extends AppCompatActivity {
     private List<String> horaList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
     private List<String> observacionesList = new ArrayList<>();
+    private List<String> correoList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class historial_recycler extends AppCompatActivity {
                 i.putExtra("grupo", grupoList.get(position));
                 i.putExtra("matricula", matriculaList.get(position));
                 i.putExtra("observaciones", observacionesList.get(position));
+                i.putExtra("correo", correoList.get(position));
 
                 startActivity(i);
             }
@@ -98,6 +100,7 @@ public class historial_recycler extends AppCompatActivity {
                     String grupo =  json_data.getString("grupo");
 
                     String observaciones =  json_data.getString("observaciones");
+                    String correo =  json_data.getString("correo");
 
                     nombreList.add(nombre);
                     paternoList.add(paterno);
@@ -109,6 +112,7 @@ public class historial_recycler extends AppCompatActivity {
                     grupoList.add(grupo);
 
                     observacionesList.add(observaciones);
+                    correoList.add(correo);
                 }
             } catch (JSONException e) {
                 Toast.makeText(historial_recycler.this, progress[0], Toast.LENGTH_LONG).show();

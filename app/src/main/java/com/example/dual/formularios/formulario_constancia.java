@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class formulario_constancia extends AppCompatActivity {
 
-    TextView matricula, grupo, paterno, materno, nombre, observaciones;
+    TextView matricula, grupo, paterno, materno, nombre, observaciones, correo;
     String crud;
     static WebService obj = new WebService();
 
@@ -36,6 +36,7 @@ public class formulario_constancia extends AppCompatActivity {
         materno = findViewById(R.id.materno_constancia);
         nombre = findViewById(R.id.nombre_constancia);
         observaciones = findViewById(R.id.observaciones_constancia);
+        correo = findViewById(R.id.correo_constancia);
     }
 
     public void enviarDatosConstancia(View view) {
@@ -45,7 +46,8 @@ public class formulario_constancia extends AppCompatActivity {
                 || nombre.getText().toString().isEmpty()
                 || observaciones.getText().toString().isEmpty()
                 || paterno.getText().toString().isEmpty()
-                || materno.getText().toString().isEmpty()) {
+                || materno.getText().toString().isEmpty()
+                || correo.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "solicitarConstancia";
@@ -66,7 +68,8 @@ public class formulario_constancia extends AppCompatActivity {
                     materno.getText().toString(),
                     fechaActual,
                     horaActual,
-                    observaciones.getText().toString());
+                    observaciones.getText().toString(),
+            correo.getText().toString());
 
             Toast.makeText(formulario_constancia.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -78,7 +81,7 @@ public class formulario_constancia extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "solicitarConstancia":
-                    msj = obj.solicitarConstancia(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8]);
+                    msj = obj.solicitarConstancia(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8], parameter[9]);
                     publishProgress(msj);
                     break;
             }
@@ -100,6 +103,7 @@ public class formulario_constancia extends AppCompatActivity {
                     paterno.setText(json_data.getString("apellido_paterno"));
                     materno.setText(json_data.getString("apellido_materno"));
                     observaciones.setText(json_data.getString("observaciones"));
+                    correo.setText(json_data.getString("correo"));
                 } else {
                     // Manejar el caso en que el JSONArray está vacío
                     matricula.setText("");
@@ -108,6 +112,7 @@ public class formulario_constancia extends AppCompatActivity {
                     paterno.setText("");
                     materno.setText("");
                     observaciones.setText("");
+                    correo.setText("");
                 }
             } catch (JSONException e) {
                 // Manejar errores de parsing JSON
@@ -117,6 +122,7 @@ public class formulario_constancia extends AppCompatActivity {
                 paterno.setText("");
                 materno.setText("");
                 observaciones.setText("");
+                correo.setText("");
             }
         }
     }

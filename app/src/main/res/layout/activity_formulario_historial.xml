@@ -14,7 +14,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="10dp"
-        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -151,6 +150,22 @@
                 android:ems="10"
                 android:hint="Observaciones"
                 android:inputType="text" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo Electronico:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/correo_historial"
+                android:hint="Correo Electronico"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/button9"

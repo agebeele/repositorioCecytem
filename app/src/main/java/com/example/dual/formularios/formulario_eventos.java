@@ -24,7 +24,7 @@ public class formulario_eventos extends AppCompatActivity {
     String crud;
     static WebService obj = new WebService();
 
-    EditText matricula,nombre, telefonoCasa, TelefonoCelular, Grupo, evento;
+    EditText matricula,nombre, telefonoCasa, TelefonoCelular, Grupo, evento, correo;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class formulario_eventos extends AppCompatActivity {
         TelefonoCelular = findViewById(R.id.txtTelefonoCelular);
         Grupo =findViewById(R.id.txtgrupo);
         evento = findViewById(R.id.txtEventos);
+        correo = findViewById(R.id.txtCorreoEvento);
     }
     public void enviarDatosCredencial(View view) {
         if (matricula.getText().toString().isEmpty()
@@ -44,7 +45,8 @@ public class formulario_eventos extends AppCompatActivity {
                 || telefonoCasa.getText().toString().isEmpty()
                 || TelefonoCelular.getText().toString().isEmpty()
                 || Grupo.getText().toString().isEmpty()
-                || evento.getText().toString().isEmpty()) {
+                || evento.getText().toString().isEmpty()
+                || correo.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "solicitar";
@@ -63,7 +65,8 @@ public class formulario_eventos extends AppCompatActivity {
                     telefonoCasa.getText().toString(),
                     TelefonoCelular.getText().toString(),
                     Grupo.getText().toString(),
-                    evento.getText().toString());
+                    evento.getText().toString(),
+                    correo.getText().toString());
 
             Toast.makeText(formulario_eventos.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -75,7 +78,7 @@ public class formulario_eventos extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "solicitar":
-                    msj = obj.solicitarEvento(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8]);
+                    msj = obj.solicitarEvento(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8],parameter[9]);
                     break;
             }
             return msj;
@@ -94,6 +97,7 @@ public class formulario_eventos extends AppCompatActivity {
                     TelefonoCelular.setText(json_data.getString("telefonocelular"));
                     Grupo.setText(json_data.getString("grupo"));
                     evento.setText(json_data.getString("evento"));
+                    correo.setText(json_data.getString("correo"));
                     Toast.makeText(formulario_eventos.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
                 }
             } catch (JSONException e) {
@@ -103,6 +107,7 @@ public class formulario_eventos extends AppCompatActivity {
                 TelefonoCelular.setText("");
                 Grupo.setText("");
                 evento.setText("");
+                correo.setText("");
             }
         }
     }

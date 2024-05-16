@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class formulario_credencial extends AppCompatActivity {
 
-    EditText numeroControl, grupo, apellidoPaterno, apellidoMaterno, nombre;
+    EditText numeroControl, grupo, apellidoPaterno, apellidoMaterno, nombre, correo;
     String crud;
     static WebService obj = new WebService();
 
@@ -35,6 +35,7 @@ public class formulario_credencial extends AppCompatActivity {
         apellidoPaterno = findViewById(R.id.apellidoPaterno);
         apellidoMaterno = findViewById(R.id.apellidoMaterno);
         nombre = findViewById(R.id.nombres_s);
+        correo = findViewById(R.id.correo_credencial);
     }
 
     public void enviarDatosCredencial(View view) {
@@ -42,7 +43,9 @@ public class formulario_credencial extends AppCompatActivity {
                 || grupo.getText().toString().isEmpty()
                 || nombre.getText().toString().isEmpty()
                 || apellidoPaterno.getText().toString().isEmpty()
-                || apellidoMaterno.getText().toString().isEmpty()) {
+                || apellidoMaterno.getText().toString().isEmpty()
+                || correo.getText().toString().isEmpty()
+        ) {
             Toast.makeText(getApplicationContext(), "Datos Faltantes", Toast.LENGTH_LONG).show();
         } else {
             crud = "solicitar";
@@ -60,7 +63,8 @@ public class formulario_credencial extends AppCompatActivity {
                     apellidoPaterno.getText().toString(),
                     apellidoMaterno.getText().toString(),
                     fechaActual,
-                    horaActual);
+                    horaActual,
+                    correo.getText().toString());
 
             Toast.makeText(formulario_credencial.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -72,7 +76,7 @@ public class formulario_credencial extends AppCompatActivity {
             String msj = null;
             switch (parameter[0]) {
                 case "solicitar":
-                    msj = obj.solicitarCredencial(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7]);
+                    msj = obj.solicitarCredencial(parameter[1], parameter[2], parameter[3], parameter[4], parameter[5], parameter[6], parameter[7], parameter[8]);
                     publishProgress(msj);
                     break;
             }
@@ -92,6 +96,7 @@ public class formulario_credencial extends AppCompatActivity {
                     nombre.setText(json_data.getString("nombre"));
                     apellidoPaterno.setText(json_data.getString("apellido_paterno"));
                     apellidoMaterno.setText(json_data.getString("apellido_materno"));
+                    correo.setText(json_data.getString("correo"));
 
                     Toast.makeText(formulario_credencial.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
                 }
@@ -101,6 +106,7 @@ public class formulario_credencial extends AppCompatActivity {
                 nombre.setText("");
                 apellidoPaterno.setText("");
                 apellidoMaterno.setText("");
+                correo.setText("");
 
                 Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG).show();
             }

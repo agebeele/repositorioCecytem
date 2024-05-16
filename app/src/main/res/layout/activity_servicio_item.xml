@@ -19,7 +19,6 @@
         android:layout_height="match_parent"
         android:layout_margin="15dp"
         android:layout_marginBottom="603dp"
-        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -450,7 +449,14 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-
+                <Button
+                    android:id="@+id/notificar_boton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:onClick="enviarCorreo"
+                    android:text="Notificar" />
 
             </LinearLayout>
 
