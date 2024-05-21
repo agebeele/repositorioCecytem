@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Nombre" />
+                    android:hint="Nombre" />
 
                 <TextView
                     android:id="@+id/textView24"
@@ -293,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Actividades a Desarrollar"
-                    android:inputType="text" />
+                    android:inputType="textMultiLine" />
 
                 <TextView
                     android:id="@+id/textView38"

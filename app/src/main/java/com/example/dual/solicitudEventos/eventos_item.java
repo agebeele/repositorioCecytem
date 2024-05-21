@@ -64,7 +64,7 @@ TextView hora, fecha, matricula, nombre, telefonoCasa, telefonoCelular, grupo, e
                 "Si tiene alguna duda o requiere información adicional, no dude en contactarnos.\n" +
                 "\n" +
                 "Atentamente,Vinculación.");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {String.valueOf(correo)});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {correo.getText().toString()});
         startActivity(intent);
     }
 }

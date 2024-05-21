@@ -92,7 +92,8 @@ TextView fecha,hora,nombre, promedio, telefonocasa, telefonocelular, grupo, corr
                 "Si tiene alguna duda o requiere información adicional, no dude en contactarnos.\n" +
                 "\n" +
                 "Atentamente,Vinculación.");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {String.valueOf(correoins)});
+
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {correoins.getText().toString()});
         startActivity(intent);
     }
 }

@@ -35,6 +35,7 @@ public class eventos_recycler extends AppCompatActivity {
     private List<String> telefonoCelularList = new ArrayList<>();
     private List<String> grupoList = new ArrayList<>();
     private List<String> eventoList = new ArrayList<>();
+    private List<String> correoList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class eventos_recycler extends AppCompatActivity {
                 i.putExtra("telefonocelular", telefonoCelularList.get(position));
                 i.putExtra("grupo", grupoList.get(position));
                 i.putExtra("evento", eventoList.get(position));
+                i.putExtra("correo", correoList.get(position));
 
                 startActivity(i);
             }
@@ -96,6 +98,7 @@ public class eventos_recycler extends AppCompatActivity {
                     String hora = json_data.getString("hora");
                     String grupo = json_data.getString("grupo");
                     String evento =  json_data.getString("evento");
+                    String correo =  json_data.getString("correo");
 
                     Log.d("WebService", "evento: " + evento);
 
@@ -107,6 +110,7 @@ public class eventos_recycler extends AppCompatActivity {
                     fechaList.add(fecha);
                     horaList.add(hora);
                     grupoList.add(grupo);
+                    correoList.add(correo);
                 }
             } catch (JSONException e) {
                 Toast.makeText(eventos_recycler.this, progress[0], Toast.LENGTH_LONG).show();

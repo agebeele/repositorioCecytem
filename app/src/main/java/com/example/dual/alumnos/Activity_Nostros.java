@@ -44,7 +44,7 @@ public class Activity_Nostros extends AppCompatActivity {
             ActivityCompat.requestPermissions(Activity_Nostros.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0001);
         }
     }
-    public void onRequestPermissionResult (int requestcode, @NonNull String[] permissions, @NonNull int[]granResults){
+    /*public void onRequestPermissionResult (int requestcode, @NonNull String[] permissions, @NonNull int[]granResults){
         super.onRequestPermissionsResult(requestcode, permissions, granResults);
 
         if (requestcode == 0001) {
@@ -59,6 +59,8 @@ public class Activity_Nostros extends AppCompatActivity {
             }
         }
     }
+
+     */
     public void streetview(View view) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/place/TecNM+-+Tecnológico+de+Estudios+Superiores+de+Coacalco+-+TESCo/@19.6305033,-99.1143025,13z/data=!4m10!1m2!2m1!1sTESCo!3m6!1s0x85d1f41b204bbead:0x174544a53d86fb50!8m2!3d19.6305033!4d-99.1143025!15sCgVURVNDbyIDiAEBkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fg%2F1tm0thgr?entry=ttu"));
@@ -67,15 +69,12 @@ public class Activity_Nostros extends AppCompatActivity {
     public void Correo(View view) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "Buenas tardes necesito ayuda");
-        intent.putExtra(Intent.EXTRA_TEXT, "Mi aplicacion tiene una mala sincronizacion con el caletador, supuestamente la temperatura" +
-                "alta, sin embargo, se encuentra baja");
         intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"brandon_adrian.itic@tesco.edu.mx"});
         startActivity(intent);
     }
     public void llamar (View view){
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 313 706 5253"));
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 56 1175 4886"));
             startActivity(intent);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE},0001);
@@ -85,7 +84,7 @@ public class Activity_Nostros extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 0001){
             if (grantResults.length == 1 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
-                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 313 706 5253"));
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: 56 1175 4886"));
                 startActivity(intent);
             } else {
                 Toast.makeText(this, "Sin permiso", Toast.LENGTH_SHORT).show();

@@ -97,6 +97,8 @@ public class formulario_becas extends AppCompatActivity {
                     nombres.getText().toString(),
                     paterno.getText().toString(),
                     materno.getText().toString(),
+                    fechaActual,
+                    horaActual,
                     fechaNacimieto.getText().toString(),
                     sexo.getText().toString(),
                     estadoNacimiento.getText().toString(),
@@ -115,10 +117,7 @@ public class formulario_becas extends AppCompatActivity {
                     estadoDomicilio.getText().toString(),
                     codigoPostal.getText().toString(),
                     escuelaSecundaria.getText().toString(),
-                    promedioGeneral.getText().toString(),
-                    fechaActual,
-                    horaActual);
-
+                    promedioGeneral.getText().toString());
 
             Toast.makeText(formulario_becas.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }
@@ -145,8 +144,8 @@ public class formulario_becas extends AppCompatActivity {
 
             try {
                 JSONArray jArray = new JSONArray(progress[0]);
-                JSONObject json_data = null;
                 for (int i = 0; i < jArray.length(); i++) {
+                    JSONObject json_data = jArray.getJSONObject(i);  // Asegúrate de obtener el objeto JSON
                     curp.setText(json_data.getString("curp"));
                     paterno.setText(json_data.getString("paterno"));
                     materno.setText(json_data.getString("materno"));
@@ -173,7 +172,7 @@ public class formulario_becas extends AppCompatActivity {
 
                     Toast.makeText(formulario_becas.this, "Usuario registrado.", Toast.LENGTH_SHORT).show();
                 }
-            } catch (JSONException e) {
+    } catch (JSONException e) {
                 curp.setText("");
                 paterno.setText("");
                 materno.setText("");

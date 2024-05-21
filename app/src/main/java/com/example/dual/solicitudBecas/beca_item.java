@@ -111,7 +111,7 @@ public class beca_item extends AppCompatActivity {
                 "Si tiene alguna duda o requiere información adicional, no dude en contactarnos.\n" +
                 "\n" +
                 "Atentamente,Vinculación.");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {String.valueOf(CorreoP)});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {CorreoP.getText().toString()});
         startActivity(intent);
     }
 }

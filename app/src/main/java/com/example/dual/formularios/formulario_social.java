@@ -76,6 +76,8 @@ public class formulario_social extends AppCompatActivity {
             String horaActual = timeFormat.format(calendar.getTime());
 
             new formulario_social.MiAsyncTask().execute(crud,
+                    horaActual,
+                    fechaActual,
                     nombreAlumno.getText().toString(),
                     promedio.getText().toString(),
                     telefonoCasa.getText().toString(),
@@ -92,9 +94,7 @@ public class formulario_social extends AppCompatActivity {
                     cargoR.getText().toString(),
                     actividades.getText().toString(),
                     horario.getText().toString(),
-                    nombreP.getText().toString(),
-                    fechaActual,
-                    horaActual);
+                    nombreP.getText().toString());
 
             Toast.makeText(formulario_social.this, "Solicitud enviada.", Toast.LENGTH_SHORT).show();
         }

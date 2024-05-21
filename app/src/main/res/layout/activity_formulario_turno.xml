@@ -185,6 +185,22 @@
                     android:ems="10"
                     android:hint="Motivos"
                     android:inputType="text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo Electronico:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/correo_cambioCarrera"
+                    android:hint="Correo Electronico"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/button9"
@@ -201,6 +217,8 @@
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
+
+
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
