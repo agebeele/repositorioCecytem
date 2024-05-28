@@ -1,5 +1,5 @@
 # CECyTEM
-Version 3.5 de la aplicacion inicial. 
+Version 5.0 de la aplicacion inicial. 
 
 La aplicacion esta sujeta a la conexion de Base de Datos con XAMPP y MySQL.
 Las conexiones de los servicios web estan configuradas con PHP.
